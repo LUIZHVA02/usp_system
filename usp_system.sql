@@ -90,17 +90,19 @@ create table eventos
     nome_evento varchar(100),
     id_empresa int,
     id_aluno int,
+    id_professor int,
     data_evento datetime,
     
     foreign key(id_empresa) references empresas (id_empresa),
     foreign key(id_aluno) references alunos(id_aluno)
 );
-insert into eventos(id_evento, nome_evento, id_empresa, id_aluno, data_evento)values
-(1, ),
-(2, ),
-(3,),
-(4,),
-(5,);
+insert into eventos(id_evento, nome_evento, id_empresa, id_aluno, id_professor, data_evento)values
+(1, 'Intervalo Musical', 1, 1, 1, '2023-11-01'),
+(2, 'Intervalo Musical', 1, 2, 1, '2023-09-29'),
+(3, 'Intervalo Musical', 1, 3, 1, '2023-08-25'),
+(4, 'Stand-up Comedy', 4, 3, 5, '2023-09-15'),
+(5, 'Palestra - Brigada de Incêndio', 2, 5, 4, '2023-08-30');
+
 create table materias
 (
 	id_materia int primary key not null,
