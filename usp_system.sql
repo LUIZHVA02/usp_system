@@ -115,6 +115,14 @@ create table materias
     foreign key(id_professor) references professores (id_professor)
 );
 
+insert into materias(id_materia, carga_horaria, id_curso,  id_professor) values
+
+(1, 100, 1, 1 ),
+(2, 200, 2, 2 ),
+(3, 160, 4, 3 ),
+(4, 110, 3, 4 ),
+(5, 180, 5, 5 );
+
 create table pesquisas
 (
 	id_pesquisa int primary key not null,
@@ -129,18 +137,33 @@ create table pesquisas
     foreign key(id_professor) references professores (id_professor)
 );
 
+insert into pesquisas(id_pesquisa, nome_pesquisa, descricao, id_aluno, id_materia, id_professor) values 
+(1, 'matematica', 'materia chata', 2,4,5),
+(2, 'artes', 'chata', 3,2,1),
+(3, 'LP', 'legal', 1,2,3),
+(4, 'historia', 'dificil', 4,3,2),
+(5, 'fisica', 'chata', 5,4,1);
+
+
 create table turmas
 (
 	id_turma int primary key not null,
     id_curso int,
     id_professor int,
     id_aluno int,
-    codigo_turma varchar(50),
+    codigo_turma int,
     
     foreign key(id_aluno) references alunos (id_aluno),
     foreign key(id_curso) references cursos(id_curso),
     foreign key(id_professor) references professores (id_professor)
 );
+
+insert into turmas(id_turma,id_curso,id_professor,codigo_turma) values 
+(1,1,1,555),
+(2,2,2,222),
+(3,3,3,333),
+(4,4,4,444),
+(5,5,5,111);
 
 create table notas
 (
@@ -153,6 +176,14 @@ create table notas
     foreign key(id_materia) references materias(id_materia)
 );
 
+insert into notas(id_nota, id_aluno, id_materia, notas) values
+
+(1,2,3,100),
+(2,3,4,20),
+(3,4,5,30),
+(4,5,1,80),
+(5,1,2,40);
+
 create table presenca
 (
 	id_presenca int primary key not null,
@@ -164,4 +195,14 @@ create table presenca
     foreign key(id_aluno) references alunos (id_aluno),
     foreign key(id_turma) references turmas(id_turma)
 );
+
+insert into presenca(id_presenca, id_aluno, id_turma, data_aula, situacao) values
+
+(1,2,3,'2023/10/04', 'Presente'),
+(4,5,2,'2023/10/04', 'Faltou'),
+(2,3,4,'2023/10/04', 'Presente'),
+(3,4,5,'2023/10/04', 'Presente'),
+(5,1,1,'2023/10/04', 'Faltou');
+
+
 
