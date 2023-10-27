@@ -43,15 +43,15 @@ create table professores
 
 insert into professores (id_professor, nome_professor, cpf, telefone, email, data_nasc)values
 (1,'Bruno Gomes da Silva','36565148598',
-11926465488,'brunogomes@gmail.com','1998-05-23'),
+5511926465488,'brunogomes@gmail.com','1998-05-23'),
 (2,'Edilton Jose da Silva','12656256214',
-11965468545, 'ediltonsilva@gmail.com','1983-08-17'),
+5511965468545, 'ediltonsilva@gmail.com','1983-08-17'),
 (3,'Celso Marcos Furtado','25545748521',
-11964548654,'celsofurtado@gmail.com','1968-06-28'),
+5511964548654,'celsofurtado@gmail.com','1968-06-28'),
 (4,'Rita de Cassia','25478565452',
-11965468465,'ritacassia@gmail.com','1979-03-09'),
+5511965468465,'ritacassia@gmail.com','1979-03-09'),
 (5,'Vitor de Jesus','12336548659',
-11965452846,'vitorsantana@gmail.com','1999-10-05');
+5511965452846,'vitorsantana@gmail.com','1999-10-05');
 
 create table cursos
 (
@@ -60,6 +60,13 @@ create table cursos
     tipo_curso varchar(100),
     carga_horaria bigint
 );
+
+insert into cursos(id_curso, nome_curso, tipo_curso, carga_horaria)values
+(1, 'Banco de Dados', 'Graduação', 1200),
+(2, 'Sistemas Operacionais', 'Pós-Graduação', 750),
+(3, 'Fundamentos da Programação Orientada a Objeto', 'Graduação', 1200),
+(4, 'Hardware', 'Curso Livre', 500),
+(5, 'Redes de Computadores', 'Formação Continuada', 750);
 
 create table empresas
 (
@@ -70,6 +77,12 @@ create table empresas
     email varchar(200)
 );
 
+insert into empresas(id_empresa, nome_empresa, telefone, cnpj, email)values
+(1, 'Microsoft', 5511442652265, 37151654524615, 'mycrosoft@outlook.com.br'),
+(2, 'Apple', 5511452687951, 13543528465156, 'apple@icloud.com.br'),
+(3, 'Google', 5511478953264, 51642503543552, 'google@gmail.com'),
+(4, 'SENAI', 5511425687915, 51684615351311, 'senai@sesisenaisp.edu.br'),
+(5, 'Mercedes', 5511425875658, 26512651523351, 'mercedes@gmail.com');
 
 create table eventos
 (
@@ -82,7 +95,12 @@ create table eventos
     foreign key(id_empresa) references empresas (id_empresa),
     foreign key(id_aluno) references alunos(id_aluno)
 );
-
+insert into eventos(id_evento, nome_evento, id_empresa, id_aluno, data_evento)values
+(1, ),
+(2, ),
+(3,),
+(4,),
+(5,);
 create table materias
 (
 	id_materia int primary key not null,
