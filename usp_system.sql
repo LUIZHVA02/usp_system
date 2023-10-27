@@ -42,11 +42,16 @@ create table professores
 );
 
 insert into professores (id_professor, nome_professor, cpf, telefone, email, data_nasc)values
-(1,'Bruno Gomes da Silva','36565148598',),
-(2,'Edilton Jose da Silva','12656256214',),
-(3,'Celso Marcos Furtado','25545748521',),
-(4,'Rita de Cassia','25478565452',),
-(5,'Vitor de Jesus','12336548659',);
+(1,'Bruno Gomes da Silva','36565148598',
+11926465488,'brunogomes@gmail.com','1998-05-23'),
+(2,'Edilton Jose da Silva','12656256214',
+11965468545, 'ediltonsilva@gmail.com','1983-08-17'),
+(3,'Celso Marcos Furtado','25545748521',
+11964548654,'celsofurtado@gmail.com','1968-06-28'),
+(4,'Rita de Cassia','25478565452',
+11965468465,'ritacassia@gmail.com','1979-03-09'),
+(5,'Vitor de Jesus','12336548659',
+11965452846,'vitorsantana@gmail.com','1999-10-05');
 
 create table cursos
 (
